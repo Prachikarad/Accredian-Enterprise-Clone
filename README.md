@@ -1,22 +1,56 @@
 # Accredian Enterprise Landing Page Clone
 
-A partial clone of the Accredian Enterprise website built with Next.js App Router, Tailwind CSS, reusable React components, and a mock lead capture API.
+This project is a partial clone of the Accredian Enterprise website, built as part of a Full Stack Developer Intern assignment.
 
-## Links
+## Live Project
 
-- Live demo: `Add your Vercel URL here`
-- GitHub repo: `Add your GitHub repository URL here`
+- Live Demo: https://accredian-enterprise-clone-pink.vercel.app/
+- GitHub Repository: https://github.com/Prachikarad/Accredian-Enterprise-Clone
 
-## Setup
+## Tech Stack
+
+- Next.js 14 (App Router)
+- React 18 + TypeScript
+- Tailwind CSS
+- Lucide React
+- Next.js API Route Handler (`/api/leads`)
+
+## Features Implemented
+
+- Responsive landing page sections (mobile + desktop)
+- Sticky navbar with smooth section navigation
+- Reusable component-based architecture
+- Animated section reveal effects
+- Program cards with category filtering
+- Testimonials slider
+- Partner and trust sections
+- Footer with structured navigation
+- Lead capture form with validation and API integration
+
+## Bonus Feature
+
+- Lead form submission handled by `POST /api/leads`
+- Server-side validation for required fields and email format
+- Success and error handling on the frontend
+
+## Project Structure
+
+- `app/page.tsx` - Main page composition
+- `app/layout.tsx` - Root layout and metadata
+- `app/api/leads/route.ts` - Lead capture API route
+- `components/*` - Reusable UI sections and shared components
+- `app/globals.css` - Global styles and design tokens
+
+## Setup Instructions
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open `http://localhost:3000`.
+Open `http://localhost:3000`
 
-For a production build:
+For production build:
 
 ```bash
 npm run build
@@ -25,52 +59,33 @@ npm start
 
 ## Approach
 
-The page is split into reusable sections for hero, trust signals, feature blocks, rollout workflow, program cards, testimonials, partner credentials, lead capture, and footer. I used the App Router so the homepage and mock API route live in the same Next.js app, which keeps the structure clean and easy to review.
+I structured the page into independent reusable components so each section is easy to maintain, test, and extend.  
+The implementation focuses on readability, clean UI composition, and practical responsiveness rather than strict pixel-perfect cloning.
 
-The UI is responsive by default, with mobile-first layouts, flexible grids, and a compact mobile navigation. A small `ScrollReveal` helper adds lightweight section animation using `IntersectionObserver` instead of a heavy animation library.
+## AI Usage (Required)
 
-## AI Usage
+AI tools were used for:
 
-AI helped with:
+- Early section/content structuring ideas
+- Tailwind utility suggestions during UI refinement
+- Drafting initial copy and API boilerplate patterns
 
-- Initial structure ideas for homepage sections and content hierarchy
-- Drafting placeholder enterprise copy and card content
-- Sanity-checking Tailwind utility combinations during layout work
-- Shaping the mock API flow for the lead capture form
+Manual improvements made:
 
-I manually improved:
-
-- The final visual direction, spacing system, typography pairing, and color palette
-- Component composition and section ordering for a stronger enterprise narrative
-- Mobile navigation behavior and responsive layout polish
-- Form UX, validation flow, success and error states, and overall content cleanup
-- README framing so the submission reads clearly for reviewers
-
-## Tech Stack
-
-- Next.js 14
-- React 18
-- TypeScript
-- Tailwind CSS
-- Lucide React
-- Next.js Route Handlers for mock API integration
-
-## Bonus
-
-The project includes a lead capture form that submits to `POST /api/leads`. The route validates the payload and stores submissions in memory for demo purposes.
+- Final layout hierarchy and spacing system
+- Visual styling direction (typography, gradients, component polish)
+- Mobile navigation and responsive behavior tuning
+- Form UX details, validation behavior, and state handling
+- Final code cleanup and README documentation
 
 ## Improvements With More Time
 
-- Replace in-memory lead storage with Supabase or PostgreSQL
-- Add branded assets and optimized images with `next/image`
-- Add accessibility refinements including stronger keyboard states and menu focus management
-- Add Playwright coverage for navigation, responsive breakpoints, and form submission
-- Add analytics and event tracking for CTA clicks and lead conversions
+- Persist leads to a database (Supabase/PostgreSQL)
+- Add E2E tests (Playwright)
+- Add accessibility audit and keyboard-navigation refinements
+- Add analytics for CTA and lead-conversion tracking
+- Replace text placeholders with branded assets
 
 ## Deployment
 
-Deploy on Vercel by importing the GitHub repository, or use:
-
-```bash
-vercel --prod
-```
+Deployed on Vercel via GitHub integration.
